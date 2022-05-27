@@ -15,7 +15,7 @@ double calculateArithmeticSeries(int n)
 const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx() 
 {
-	printf("%s1/2 + 3/4 + 5/6 + ... + (2n + 1)/(2n + 2) \n", TITLE);
+	printf("%sS(n) = 1/2 + 3/4 + 5/6 + ... + (2n + 1)/(2n + 2) \n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");
