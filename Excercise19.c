@@ -1,14 +1,21 @@
 #include <stdio.h>
 #include <math.h>
 
-// Function to find The sum of the members of a finite arithmetic progression is called an arithmetic series
-int calculateArithmeticSeries(int x, int n)
+double productOfNumbers(int n)
 {
-	int sum = 0;
-	for (int i = 0; i < n; ++i)
+	if (n <= 1)
+		return 1;
+	return n * productOfNumbers(n - 1);
+}
+
+// Function to find The sum of the members of a finite arithmetic progression is called an arithmetic series
+double calculateArithmeticSeries(int x, int n)
+{
+
+	double sum = 1;
+	for (int i = 0; i <= n; ++i)
 	{
-		printf("\n%lf", pow(x, i * 2 + 1));
-		sum = sum + pow(x, i * 2 + 1);
+		sum = sum + pow(x, 2 * i + 1) / productOfNumbers(2 * i + 1);
 	};
 
 	return sum;
@@ -17,7 +24,7 @@ int calculateArithmeticSeries(int x, int n)
 const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n\0";
 void runEx()
 {
-	printf("%sS(n) = x^1 + x^3 + x^5 + ... + x^(2n+1) \n", TITLE);
+	printf("%sS(n) = 1 + x^(2*0+1)/(2*0+1)! + x^(2*1+1)/(2*1+1)! + x^(2*2+1)/(2*2+1)! + ... + x^(2n+1)/(2n+1)! \n", TITLE);
 
 	unsigned int x;
 	printf("\nPlease enter an integer value of x: ");
@@ -26,7 +33,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	printf("S(%d, %d) = %d \n", x, n, calculateArithmeticSeries(x, n));
+	printf("S(%d, %d) = %lf \n", x, n, calculateArithmeticSeries(x, n));
 };
 
 int main(void)
