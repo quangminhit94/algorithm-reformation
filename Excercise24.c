@@ -5,10 +5,10 @@
 void findDivisorOfNumbers(int n)
 {
 	// divisor of 18 is 1, 2, 3, 6, 9, 18
-	printf("Divisor of %d is: ", n);
+	printf("Divisor of %d but odd number is: ", n);
 	for (int i = n; i > 0; --i)
 	{
-		if (n % i == 0)
+		if (n % i == 0 && i % 2 != 0)
 		{
 			printf("%d ", i);
 		}

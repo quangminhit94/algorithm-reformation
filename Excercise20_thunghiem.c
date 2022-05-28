@@ -30,7 +30,7 @@ int *divisorOfNumbers(int n)
 	return divisorNumbers;
 }
 
-const char TITLE[] = "Find all divisor numbers of a number \n\0";
+const char TITLE[] = "Find all divisor numbers of a number \n";
 void runEx()
 {
 	printf("size of int is %lu ", sizeof(char));

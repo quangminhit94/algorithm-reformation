@@ -13,7 +13,7 @@ int calculateArithmeticSeries(int x, int n)
 	return sum;
 };
 
-const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n\0";
+const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx()
 {
 	printf("%sS(n) = x^2 + x^4 + x^8 + ... + x^2n \n", TITLE);

@@ -12,7 +12,7 @@ int calculateArithmeticSeries(int n)
 	return sum;
 };
 
-const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n\0\0";
+const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx() 
 {
 	printf("%sS(n) = 1 + 2 + ... + n \n", TITLE);

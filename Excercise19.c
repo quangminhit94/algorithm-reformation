@@ -21,7 +21,7 @@ double calculateArithmeticSeries(int x, int n)
 	return sum;
 };
 
-const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n\0";
+const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx()
 {
 	printf("%sS(n) = 1 + x^(2*0+1)/(2*0+1)! + x^(2*1+1)/(2*1+1)! + x^(2*2+1)/(2*2+1)! + ... + x^(2n+1)/(2n+1)! \n", TITLE);

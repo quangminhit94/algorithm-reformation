@@ -5,14 +5,17 @@
 void findDivisorOfNumbers(int n)
 {
 	// divisor of 18 is 1, 2, 3, 6, 9, 18
-	printf("Divisor of %d is: ", n);
-	for (int i = n; i > 0; --i)
+	printf("Divisor number %d but not include n is: ", n);
+	int sum = 0;
+	for (int i = n - 1; i > 0; --i)
 	{
 		if (n % i == 0)
 		{
 			printf("%d ", i);
+			sum += i;
 		}
 	};
+	printf("\nSum of divisor number %d but not include n is: %d", n, sum);
 	printf("\n");
 }
 

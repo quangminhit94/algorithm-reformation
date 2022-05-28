@@ -6,14 +6,16 @@ void findDivisorOfNumbers(int n)
 {
 	// divisor of 18 is 1, 2, 3, 6, 9, 18
 	printf("Divisor of %d is: ", n);
+	int count = 0;
 	for (int i = n; i > 0; --i)
 	{
 		if (n % i == 0)
 		{
 			printf("%d ", i);
+			count += 1;
 		}
 	};
-	printf("\n");
+	printf("\nCount of divisor number %d: %d\n", n, count);
 }
 
 const char TITLE[] = "Find all divisor numbers of a number \n";
