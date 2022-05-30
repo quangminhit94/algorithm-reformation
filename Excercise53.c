@@ -8,12 +8,18 @@ int countOfMaxDigitOfNumber(int number)
 	{
 		digit = number % 10;
 		number = number / 10;
-		if(digit == maxDigit)
-			countMax += 1;
-		if(digit > maxDigit) {
+
+		if (digit > maxDigit)
+		{
+			countMax = 0;
 			maxDigit = digit;
 		}
+		if (digit == maxDigit)
+		{
+			countMax += 1;
+		}
 	}
+	printf("Max digit of the number is: %d\n", maxDigit);
 	return countMax;
 }
 
@@ -26,8 +32,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	printf("n = %d, Count of max digit of the number is: %d\n", n, countOfMaxDigitOfNumber(n));
-	
+	printf("Count of max digit of the number is: %d\n", countOfMaxDigitOfNumber(n));
 };
 
 int main(void)
