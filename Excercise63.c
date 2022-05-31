@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void findMaxDivisor(int a, int b)
+void findLcm(int a, int b)
 {
 	// 45, 27
 	int temp = 0, max = 0;
@@ -22,12 +22,15 @@ void findMaxDivisor(int a, int b)
 	};
 	printf("\n");
 	printf("Max Divisor of %d and %d is: %d\n", a, b, max);
+	int lcm = 0;
+	lcm = a / max * b;
+	printf("Least common multiple of integers %d and %d is: %d\n", a, b, lcm);
 };
 
-const char TITLE[] = "Find max divisor numbers of a and b \n";
+const char TITLE[] = "Least common multiple of integers a and b \n";
 void runEx()
 {
-	printf("%sD(a, b) = ? \n", TITLE);
+	printf("%sLcm(a, b) = ?. Ex: 4 and 6 is 12 \n", TITLE);
 
 	unsigned int a;
 	printf("\nPlease enter an integer value of a: ");
@@ -36,8 +39,7 @@ void runEx()
 	printf("\nPlease enter an integer value of b: ");
 	scanf("%d", &b);
 
-	findMaxDivisor(a, b);
-	// printf("D(%d, %d) = %d \n", findMaxDivisor(a, b));
+	findLcm(a, b);
 };
 
 int main(void)
