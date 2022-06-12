@@ -3,11 +3,12 @@
 
 double calculateArithmeticSeries(int n)
 {
-	double sum = sqrt(2);
-	for (int i = 1; i < n; ++i)
+	double sum = 0;
+	if(n == 0) return 0;
+	for (int i = 0; i < n; ++i)
 	{
-		// 1 -> sum(1) = sqrt(2 + sum(0)) = sqrt(2 + sqrt(2))
-		// 2 -> sum(2) = sqrt(2 + sum(1)) = sqrt(2 + sqrt(2 + sqrt(2)))
+		// 1 square sign, n = 1 -> S = sqrt(2 + sum(0)) = sqrt(2 + 0)
+		// 2 square sign, n = 2 -> S = sqrt(2 + sum(1)) = sqrt(2 + sqrt(2))
 		sum = sqrt(2 + sum);
 	};
 
