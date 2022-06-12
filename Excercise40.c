@@ -5,6 +5,7 @@ double squareNumber(int x, int number) {
 	double sum = 0;
 	for(int i = number; i > 0; --i) {
 		sum = sqrt(pow(x, i) + sum);
+		printf("%lf\n", pow(x, i));
 	}
 	return sum;
 }

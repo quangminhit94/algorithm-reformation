@@ -1,34 +1,41 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
-void findPrimeNumbers(int n)
+// prime of number 5 is 1 and 5
+// have no divisor but only 1 and n
+int isPrime(int n)
 {
-	// prime of number 5 is 1 and 5
-	// have no divisor but only 1 and n
 	for (int i = 2; i <= n - 1; ++i)
 	{
-		if (n % i != 0)
+		if (n % i == 0)
 		{
-			printf("\n%d is a prime number\n", n);
-			break;
-		} else {
-			printf("\n%d is not a prime number\n", n);
-			break;
+			return 0;
 		}
 	};
+	return 1;
 }
 
 const char TITLE[] = "Find all divisor numbers of a number \n";
 void runEx()
 {
-	printf("%sDivisor of 18 is 1, 2, 3, 6, 9, 18 \n", TITLE);
+	printf("%sPrime of 5 is 1 and 5 \n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	findPrimeNumbers(n);
+	if (n < 0)
+	{
+		printf("Please input an integer value");
+		return;
+	}
+
+	int prime = 0;
+	prime = isPrime(n);
+	if (prime == 1)
+		printf("\n%d is a prime number\n", n);
+	else
+		printf("\n%d is not a prime number\n", n);
 };
 
 int main(void)

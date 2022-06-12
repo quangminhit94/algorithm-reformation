@@ -1,33 +1,31 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
-void findDivisorOfNumbers(int n)
+void findProductOfDivisorNumber(int n)
 {
-	// divisor of 18 is 1, 2, 3, 6, 9, 18
 	printf("Divisor of %d is: ", n);
-	int sum = 1;
+	int product = 1;
 	for (int i = n; i > 0; --i)
 	{
 		if (n % i == 0)
 		{
 			printf("%d ", i);
-			sum *= i;
+			product *= i;
 		}
 	};
-	printf("\nTotal of divisor number %d: %d\n", n, sum);
+	printf("\nProduct of divisor number %d: %d\n", n, product);
 }
 
-const char TITLE[] = "Find all divisor numbers of a number \n";
+const char TITLE[] = "Find product of divisor number \n";
 void runEx()
 {
-	printf("%sDivisor of 18 is 1, 2, 3, 6, 9, 18 \n", TITLE);
+	printf("%s", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	findDivisorOfNumbers(n);
+	findProductOfDivisorNumber(n);
 };
 
 int main(void)

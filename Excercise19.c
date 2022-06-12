@@ -3,9 +3,11 @@
 
 double productOfNumbers(int n)
 {
-	if (n <= 1)
-		return 1;
-	return n * productOfNumbers(n - 1);
+	int product = 1;
+	for(int i = 0; i < n; ++i) {
+		product *= i;
+	}
+	return product;
 }
 
 // Function to find The sum of the members of a finite arithmetic progression is called an arithmetic series
@@ -13,8 +15,9 @@ double calculateArithmeticSeries(int x, int n)
 {
 
 	double sum = 1;
-	for (int i = 0; i <= n; ++i)
+	for (int i = 0; i < n; ++i)
 	{
+		// 1 + x^(2*0+1) / 1 + x^(2+1)/6
 		sum = sum + pow(x, 2 * i + 1) / productOfNumbers(2 * i + 1);
 	};
 

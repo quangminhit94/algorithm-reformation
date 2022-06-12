@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
-void findDivisorOfNumbers(int n)
+void findCountDivisorOfNumber(int n)
 {
-	// divisor of 18 is 1, 2, 3, 6, 9, 18
 	printf("Divisor of %d is: ", n);
 	int count = 0;
 	for (int i = n; i > 0; --i)
@@ -18,7 +16,7 @@ void findDivisorOfNumbers(int n)
 	printf("\nCount of divisor number %d: %d\n", n, count);
 }
 
-const char TITLE[] = "Find all divisor numbers of a number \n";
+const char TITLE[] = "Find count divisor numbers of a number \n";
 void runEx()
 {
 	printf("%sDivisor of 18 is 1, 2, 3, 6, 9, 18 \n", TITLE);
@@ -27,7 +25,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	findDivisorOfNumbers(n);
+	findCountDivisorOfNumber(n);
 };
 
 int main(void)

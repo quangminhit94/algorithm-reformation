@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
-void findDivisorOfNumbers(int n)
+void findDivisorOfNumber(int n)
 {
 	// divisor of 18 is 1, 2, 3, 6, 9, 18
 	printf("Divisor of %d is: ", n);
@@ -25,7 +24,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	findDivisorOfNumbers(n);
+	findDivisorOfNumber(n);
 };
 
 int main(void)

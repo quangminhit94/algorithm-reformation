@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
-void findDivisorOfNumbers(int n)
+void findOddDivisorOfNumber(int n)
 {
-	// divisor of 18 is 1, 2, 3, 6, 9, 18
-	printf("Divisor of %d but odd number is: ", n);
+	printf("Odd divisor of %d is: ", n);
 	for (int i = n; i > 0; --i)
 	{
 		if (n % i == 0 && i % 2 != 0)
@@ -16,16 +14,16 @@ void findDivisorOfNumbers(int n)
 	printf("\n");
 }
 
-const char TITLE[] = "Find all divisor numbers of a number \n";
+const char TITLE[] = "Find odd divisor of a number \n";
 void runEx()
 {
-	printf("%sDivisor of 18 is 1, 2, 3, 6, 9, 18 \n", TITLE);
+	printf("%sOdd divisor of 18 is 1, 3, 9 \n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	findDivisorOfNumbers(n);
+	findOddDivisorOfNumber(n);
 };
 
 int main(void)

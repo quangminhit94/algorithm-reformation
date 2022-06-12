@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int totalDigitOfNumber(int number)
+int totalDigitOfNumber(unsigned int& number)
 {
 	int digit = 0;
 	for (int i = number; i > 0; i /= 10)
@@ -22,6 +22,7 @@ void runEx()
 	scanf("%d", &n);
 
 	printf("n = %d, S(n) = %d \n", n, totalDigitOfNumber(n));
+	printf("%d\n", n);
 };
 
 int main(void)
