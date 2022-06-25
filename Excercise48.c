@@ -6,8 +6,7 @@ int productOddDigitOfNumber(int number)
 	int digit = 0, product = 1;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
+		digit = i % 10;
 		if (digit % 2 != 0)
 			product *= digit;
 	}

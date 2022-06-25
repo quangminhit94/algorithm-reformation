@@ -6,8 +6,7 @@ int countOddDigitOfNumber(int number)
 	int digit = 0, count = 0;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
+		digit = i % 10;
 		if (digit % 2 != 0)
 			count += 1;
 	}
