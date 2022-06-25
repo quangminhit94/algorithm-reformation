@@ -4,8 +4,11 @@
 double sumOfFraction(int number)
 {
 	double sum = 1;
-	for (int i = 0; i < number; ++i)
+	for (int i = 1; i <= number; ++i)
 	{
+		// i = 1 -> sum = 1 / (1 + 1)
+		// i = 2 -> sum = 1 / (1 + sum(1))
+		// i = 3 -> sum = 1 / (1 + sum(2))
 		sum = 1 / (1 + sum);
 	}
 	return sum;
