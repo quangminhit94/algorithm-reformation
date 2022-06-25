@@ -3,22 +3,18 @@
 
 void isDescNumber(int number)
 {
-	int digit = 0, temp = number, previousDigit = 0;
+	int digit = 0, previousDigit = 0;
 	char isDescNumber = 'y';
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = temp % 10;
-		temp = temp / 10;
-		if (digit > previousDigit)
-		{
-			previousDigit = digit;
-		}
-		else
+		digit = i % 10;
+		if (digit < previousDigit)
 		{
 			isDescNumber = 'n';
 			printf("the number %d is NOT a Desc Number\n", number);
 			break;
 		}
+		previousDigit = digit;
 	}
 	if (isDescNumber == 'y')
 		printf("the number %d is a Desc Number\n", number);

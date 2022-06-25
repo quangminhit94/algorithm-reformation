@@ -3,25 +3,20 @@
 void findMaxDivisor(int a, int b)
 {
 	// 45, 27
-	int temp = 0, max = 0;
-	if(a < b) {
-		temp = a;
-		a = b;
-		b = temp;
+	int min = a;
+	if(min > b) {
+		min = b;
 	}
-	printf("Divisor of %d and %d is: ", a, b);
-	for (int i = a; i > 0; --i)
+	// a = 45, b = 27
+	// i = 27 -> a % i != 0, b % i == 0
+	// i = 9 -> a % i == 0, b % i == 0 -> max = 9
+	for (int i = min; i > 0; --i)
 	{
-		for(int j = i; j < b; ++j) {
-			if (b % j == 0 && j == i)
-			{
-				printf("%d ", j);
-				if(j > max) max = j;
-			}
+		if (a % i == 0 && b % i == 0) {
+			printf("Max Divisor of %d and %d is: %d\n", a, b, i);
+			break;
 		}
 	};
-	printf("\n");
-	printf("Max Divisor of %d and %d is: %d\n", a, b, max);
 };
 
 const char TITLE[] = "Find max divisor numbers of a and b \n";

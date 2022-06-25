@@ -3,12 +3,11 @@
 
 void isSymmetricNumber(int number)
 {
-	int digit = 0, temp = number, reverseNumber = 0;
+	int digit = 0, reverseNumber = 0;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = temp % 10;
+		digit = i % 10;
 		reverseNumber = reverseNumber * 10 + digit;
-		temp = temp / 10;
 	}
 	if(reverseNumber == number)
 		printf("%d is a symmetric number\n", number);

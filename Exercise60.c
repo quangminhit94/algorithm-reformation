@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <math.h>
 
+
 void isAscendingNumber(int number)
 {
-	int digit = 0, temp = number, previousDigit = 0;
+	int digit = 0, previousDigit = number % 10;
 	char isAscendingNumber = 'y';
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = temp % 10;
-		temp = temp / 10;
+		// 1234
+		// digit = 4, prev = 4
+		// digit = 3, prev = 4 -> digit < prev
+		digit = i % 10;
 		if (digit > previousDigit)
 		{
-			previousDigit = digit;
 			isAscendingNumber = 'n';
+			printf("the number %d is NOT a Ascending Number\n", number);
+			break;
 		}
-		else
-		{
-			isAscendingNumber = 'y';
-		}
+		previousDigit = digit;
 	}
 	if (isAscendingNumber == 'y')
 		printf("the number %d is a Ascending Number\n", number);
-	else 
-		printf("the number %d is NOT a Ascending Number\n", number);
+		
 	
 }
 
