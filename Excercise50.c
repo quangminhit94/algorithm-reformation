@@ -6,9 +6,13 @@ int reverseDigitOfNumber(int number)
 	int digit = 0, reverseNumber = 0;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
+		// n = 1234
+		// i = 1234 -> digit = 1234 % 10 = 4 -> r = 4
+		// i = 123 -> digit = 123 % 10 = 3 -> r = 4 * 10 + 3 = 43
+		// i = 12 -> digit = 12 % 10 = 2 -> r = 43 * 10 + 2 = 432
+		// i = 1 -> digit = 1 % 10 = 1 -> r = 432 * 10 + 1 = 4321
+		digit = i % 10;
 		reverseNumber = reverseNumber * 10 + digit;
-		number = number / 10;
 	}
 	return reverseNumber;
 }
