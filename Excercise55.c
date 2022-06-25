@@ -3,20 +3,15 @@
 
 int amountOfFirstDigitOfNumber(int number)
 {
-	int digit = 0, temp = number, firstDigit = 0, countFirstDigit = 0;
+	int firstDigit = 0, countFirstDigit = 0;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
+		firstDigit = i % 10;
 	}
-	number = temp;
 
-	firstDigit = digit;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
-		if (firstDigit == digit)
+		if (firstDigit == i % 10)
 		{
 			countFirstDigit += 1;
 		}
@@ -34,7 +29,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	printf("Amount of min digit of the number is: %d\n", amountOfFirstDigitOfNumber(n));
+	printf("Amount of first digit of the number is: %d\n", amountOfFirstDigitOfNumber(n));
 };
 
 int main(void)

@@ -4,22 +4,19 @@
 void isEvenDigitOfNumber(int number)
 {
 	int digit = 0, count = 0, even = 0;
-	printf("\nDigits of the number %d: ", number);
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
+		digit = i % 10;
 		count += 1;
-		printf("%d ", digit);
 		if (digit % 2 == 0)
 			even += 1;
 	}
 	printf("\nAmount digits of the number: %d\n", count);
 	printf("Amount even digits of the number: %d\n", even);
 	if(count == even)
-		printf("Digits of the number is even\n");
+		printf("The number is completely even digit\n");
 	else
-		printf("Digits of the number is NOT even\n");
+		printf("The number is NOT completely even digit\n");
 }
 
 const char TITLE[] = "Digits of the number is even or not \n";

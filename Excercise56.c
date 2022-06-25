@@ -4,22 +4,19 @@
 void isOddDigitOfNumber(int number)
 {
 	int digit = 0, count = 0, odd = 0;
-	printf("\nDigits of the number %d: ", number);
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
+		digit = i % 10;
 		count += 1;
-		printf("%d ", digit);
 		if (digit % 2 != 0)
 			odd += 1;
 	}
 	printf("\nAmount digits of the number: %d\n", count);
 	printf("Amount odd digits of the number: %d\n", odd);
 	if(count == odd)
-		printf("Digits of the number is odd\n");
+		printf("The number is completely odd digit\n");
 	else
-		printf("Digits of the number is NOT odd\n");
+		printf("The number is NOT completely odd digit\n");
 }
 
 const char TITLE[] = "Digits of the number is odd or not \n";

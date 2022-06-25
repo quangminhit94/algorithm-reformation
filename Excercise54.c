@@ -6,13 +6,12 @@ int amountOfMinDigitOfNumber(int number)
 	int digit = 0, minDigit = number, countMin = 0;
 	for (int i = number; i > 0; i /= 10)
 	{
-		digit = number % 10;
-		number = number / 10;
+		digit = i % 10;
 
 		if (digit < minDigit)
 		{
-			countMin = 0;
 			minDigit = digit;
+			countMin = 0;
 		}
 		if (digit == minDigit)
 		{
