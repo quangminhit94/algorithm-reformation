@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <math.h>
-double sumOfNumber(int n) {
-	if(n <= 1) return 1;
-	return n + sumOfNumber(n - 1);
+double productOfNumber(int n) {
+	double product = 1;
+	for(int i = 1; i <= n; ++i) {
+		product *= i;
+	}
+	return product;
 }
 double calculateArithmeticSeries(int x, int n)
 {
 	double sum = 0;
 
 	for (int i = 1; i <= n; ++i) {
-		sum += pow(-1, i) * (pow(x, i) / sumOfNumber(i));
+		sum += pow(-1, i) * (pow(x, i) / productOfNumber(i));
 	};
 
 	return sum;
@@ -18,7 +21,7 @@ double calculateArithmeticSeries(int x, int n)
 const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx()
 {
-	printf("%sS(x, n) = - x + x^2/(1+2) - x^3/(1+2+3) + ... + (-1)^n*(x^n/(1+2+3+...+n)) \n", TITLE);
+	printf("%sS(x, n) = - x + x^2/2! - x^3/3! + ... + (-1)^n*(x^n/n!) \n", TITLE);
 
 	unsigned int x;
 	printf("\nPlease enter an integer value of x: ");

@@ -6,12 +6,14 @@ void checkIsPow2(int n)
 	char isPow2 = 'n';
 	for (int i = 1; i <= n; ++i)
 	{
-		if (pow(2, i) == n && pow(2, i) <= n)
+		if (pow(2, i) == n)
+		{
 			isPow2 = 'y';
+			printf("%d has 2^k\n", n);
+			return;
+		}
 	}
-	if (isPow2 == 'y')
-		printf("%d has 2^k\n", n);
-	else
+	if (isPow2 == 'n')
 		printf("%d has NOT 2^k\n", n);
 }
 
