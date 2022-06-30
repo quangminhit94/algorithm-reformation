@@ -1,13 +1,21 @@
 #include <stdio.h>
 
+// ax + b = 0 -> x = -b/a
+// a = 0 -> b = 0 -> x = undefined
+// a = 0, b = 0 -> 0 = 0 -> x is infinitely many roots
 void findX(int a, int b)
 {
-	double x = b * -1.0 / a;
 	printf("%dx + %d = 0\n", a, b);
 	if(a == 0) {
-		printf("x has many result");
+		if(b == 0) {
+			printf("x is infinitely many roots");
+			return;
+		}
+		printf("x is undefined");
 		return;
 	}
+	double x;
+	x = b * -1.0 / a;
 	printf("x = %lf\n", x);
 };
 

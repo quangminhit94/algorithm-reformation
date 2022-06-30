@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 double sumOfNumber(int n) {
-	if(n <= 1) return 1;
-	return n + sumOfNumber(n - 1);
+	double sum = 0;
+	for(int i = 1; i <= n; ++i) {
+		sum += i;
+	}
+	return sum;
 }
 double calculateArithmeticSeries(int x, int n)
 {
