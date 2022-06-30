@@ -7,12 +7,12 @@ double sumOfNumber(int n) {
 	}
 	return sum;
 }
-// i = 140 -> sum = 9870 < 10000
-// i = 141 -> sum = 10011 > 10000
+// i = 140 -> sum = 9870 < 10000 -> false
+// i = 141 -> sum = 10011 > 10000 -> true
 int findMinOfNumber() {
 	int CONDITION = 10000;
 	double sum = 0;
-	for(int i = 1; i < CONDITION; ++i) {
+	for(int i = 1; i; ++i) {
 		sum = sumOfNumber(i);
 		if(sum > CONDITION)
 			return i;
