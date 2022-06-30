@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 double sumOfNumber(int n) {
-	if(n <= 1) return 1;
-	return pow(n, 3) + sumOfNumber(n - 1);
+	double sum = 0;
+	for(int i = 1; i <= n; ++i) {
+		sum += pow(i, 3);
+	}
+	return sum;
 }
 
 const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";

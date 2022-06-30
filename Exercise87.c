@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include <math.h>
-int sumOfNumber(int n) {
-	if(n <= 1) return 1;
-	return n + sumOfNumber(n - 1);
+double sumOfNumber(int n) {
+	double sum = 0;
+	for(int i = 1; i <= n; ++i) {
+		sum += i;
+	}
+	return sum;
 }
+// i = 140 -> sum = 9870 < 10000
+// i = 141 -> sum = 10011 > 10000
 int findMinOfNumber() {
 	int CONDITION = 10000;
-	int sum = 0;
-	for(int i = 0; i < CONDITION; i+= 1) {
+	double sum = 0;
+	for(int i = 1; i < CONDITION; ++i) {
 		sum = sumOfNumber(i);
 		if(sum > CONDITION)
 			return i;
