@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-
+// f(x) = 2x^2 + 5x + 9 with x >= 5
+// f(x) = -2x^2 + 4x - 9 with x < 5
 void calculateFx(int x)
 {
 	if(x >= 5) {

@@ -3,7 +3,7 @@
 void findLcm(int a, int b)
 {
 	// 45, 27
-	int min = a, max = 0;
+	int min = a, max = 1;
 	if(min > b) {
 		min = b;
 	}

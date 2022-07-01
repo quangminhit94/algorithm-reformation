@@ -11,7 +11,7 @@ void findNumber(int n)
 	printf("\n");
 }
 
-const char TITLE[] = "Print all odd number less than 100";
+const char TITLE[] = "Print all odd unsigned number less than 100";
 void runEx()
 {
 	printf("%s\n", TITLE);

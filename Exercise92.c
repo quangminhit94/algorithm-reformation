@@ -1,27 +1,18 @@
 #include <stdio.h>
+#include <math.h>
 
-void findMaxDivisor(int a, int b)
+int maxDivisor(int a, int b)
 {
-	// 45, 27
-	int temp = 0, max = 0;
-	if(a < b) {
-		temp = a;
-		a = b;
-		b = temp;
-	}
-	printf("Divisor of %d and %d is: ", a, b);
-	for (int i = a; i > 0; --i)
+	// 45, 27 -> 9 is max divisor
+	int maxDivisor = 1;
+	for(int i = 1; i <= a && i <= b; i++)
 	{
-		for(int j = i; j < b; ++j) {
-			if (b % j == 0 && j == i)
-			{
-				printf("%d ", j);
-				if(j > max) max = j;
-			}
+		if(a % i == 0 && b % i == 0)
+		{
+			maxDivisor = i;
 		}
-	};
-	printf("\n");
-	printf("Max Divisor of %d and %d is: %d\n", a, b, max);
+	}
+	return maxDivisor;
 };
 
 const char TITLE[] = "Find max divisor numbers of a and b \n";
@@ -36,8 +27,7 @@ void runEx()
 	printf("\nPlease enter an integer value of b: ");
 	scanf("%d", &b);
 
-	findMaxDivisor(a, b);
-	// printf("D(%d, %d) = %d \n", findMaxDivisor(a, b));
+	printf("Max divisor of %d and %d is %d\n", a, b, maxDivisor(a, b));
 };
 
 int main(void)

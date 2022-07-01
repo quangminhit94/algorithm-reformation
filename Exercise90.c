@@ -5,7 +5,7 @@
 // i = 1 -> sum = 1 < 4 -> true
 // i = 2 -> sum = 3 < 4 -> true
 // i = 3 -> sum = 6 > 4 -> false -> return i = 2
-int calculateM(int n)
+int m(int n)
 {
 	double sum = 0;
 	int m;
@@ -15,9 +15,11 @@ int calculateM(int n)
 		if (sum >= n)
 		{
 			m = i - 1;
+			sum = sum - i;
 			break;
 		}
 	}
+	printf("S(%d) = %lf\n", m, sum);
 	return m;
 }
 
@@ -30,7 +32,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	printf("S(m) < %d, m = %d \n", n, calculateM(n));
+	printf("S(m) < %d, m = %d \n", n, m(n));
 };
 
 int main(void)

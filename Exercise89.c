@@ -4,7 +4,7 @@
 // n = 3
 // i = 1 -> sum = 1 < n -> true
 // i = 3 -> sum = 4 > n -> false
-int findNumber(int n)
+int sum(int n)
 {
 	int sum = 0;
 	for (int i = 1; i <= n; ++i)
@@ -17,7 +17,7 @@ int findNumber(int n)
 	return sum;
 }
 
-const char TITLE[] = "Find sum of odd number that is less than n of \n";
+const char TITLE[] = "Find sum of odd number that is less than n\n";
 void runEx()
 {
 	printf("%sFind S(x) = 1 + 3 + ... + x < n \n", TITLE);
@@ -26,7 +26,7 @@ void runEx()
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
 
-	printf("S = %d \n", findNumber(n));
+	printf("S = %d \n", sum(n));
 };
 
 int main(void)
