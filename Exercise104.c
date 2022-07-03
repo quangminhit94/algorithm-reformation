@@ -75,6 +75,31 @@ void runEx()
 		printf("\nyear must be less than or equal to 9999\n");
 		return;
 	}
+	
+	if(month == 4 || month == 6 || month == 9 || month == 11)
+	{
+		if(day > 30)
+		{
+			printf("invalid date, %d/%d has 30 days\n", month, year);
+			return;
+		}
+	}
+	else if(month == 2 && year % 4 == 0)
+	{
+		if(day > 29)
+		{
+			printf("invalid date, %d/%d has 29 days\n", month, year);
+			return;
+		}
+	}
+	else if(month == 2 && year % 4 != 0)
+	{
+		if(day > 28)
+		{
+			printf("invalid date, %d/%d has 28 days\n", month, year);
+			return;
+		}
+	}
 	int result = dayInYear(day, month, year);
 	printf("%d/%d/%d is the %dth day of the year\n", day, month, year, result);
 };
