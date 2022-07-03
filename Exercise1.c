@@ -21,6 +21,12 @@ void runEx()
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");
 	scanf("%d", &n);
+	// check n is positive integer
+	if (n < 0)
+	{
+		printf("\nn must be positive integer\n");
+		return;
+	}
 
 	printf("S(%d) = %d \n", n, calculateArithmeticSeries(n));
 };

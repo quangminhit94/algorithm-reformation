@@ -158,6 +158,7 @@ void runEx()
 	scanf("%d", &f);
 
 	findX(a, b, c, d, e, f);
+	
 };
 
 int main(void)
