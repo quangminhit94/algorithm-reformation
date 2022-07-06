@@ -17,17 +17,14 @@ double calculateArithmeticSeries(int x, int n)
 	{
 		sum += pow(-1, i) * pow(x, 2 * i + 1) / productNumber(2 * i + 1);
 	};
-	// sin(x) = x -> x = 0
-	// sin(x) = x - x^3/3! -> x - x^3/3! = 0 -> x = 0
 	
-
 	return sin(sum);
 };
 
 const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx()
 {
-	printf("%sS(n) = 1 + 2 + ... + n \n", TITLE);
+	printf("%ssin(x) = x - x^3/3! + x^5/5! - x^7/7! + x^9/9! - x^11/11! + ... \n", TITLE);
 
 	unsigned int x;
 	printf("\nPlease enter an integer value of x: ");
