@@ -18,10 +18,10 @@ void findSquareNumbers(int n)
 	printf("\n");
 }
 
-const char TITLE[] = "Calculate sum of n\n";
+const char TITLE[] = "Find prime number less than n\n";
 void runEx()
 {
-	printf("%sS(n) = x^1 + x^2 + ... + x^n\n", TITLE);
+	printf("%sif n = 30 prime is 25 16 9 4 1\n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");
