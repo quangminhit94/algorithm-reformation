@@ -11,7 +11,7 @@ double calculateArithmeticSeries(int x, int n)
 {
 	double sum = 1;
 
-	for (int i = 0; i < n; ++i) {
+	for (int i = 0; i <= n; ++i) {
 		sum += pow(-1, i + 1) * (pow(x, 2*i + 1) / productOfNumber(2*i + 1));
 	};
 

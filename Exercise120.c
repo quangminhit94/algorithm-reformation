@@ -18,10 +18,10 @@ void findSquareNumbers(int n)
 	printf("\n");
 }
 
-const char TITLE[] = "Find prime number less than n\n";
+const char TITLE[] = "Find square number less than n\n";
 void runEx()
 {
-	printf("%sif n = 30 prime is 25 16 9 4 1\n", TITLE);
+	printf("%sif n = 30 square is 25 16 9 4 1\n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of n: ");

@@ -5,11 +5,11 @@ void findX(int a, int b, int c, int d, int e, int f)
 	// ax + by = c
 	// dx + ey = f
 	double x = 0, y = 0;
-	if (a == 0 && b == 0 && c == 0 || d == 0 && e == 0 && f == 0)
+	if ((a == 0 && b == 0 && c == 0) || (d == 0 && e == 0 && f == 0))
 	{
 		printf("x, y are infinitely many roots\n");
 	}
-	else if (a == 0 && b == 0 || d == 0 && e == 0)
+	else if ((a == 0 && b == 0) || (d == 0 && e == 0))
 	{
 		printf("x, y are undefined\n");
 	}

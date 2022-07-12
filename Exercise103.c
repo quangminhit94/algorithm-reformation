@@ -6,6 +6,7 @@ char *previousDay(int day, int month, int year)
 {
 	char *result;
 	result = (char *)malloc(sizeof(char) * 100);
+	// check previous day
 	if (day == 1 && month == 1)
 	{
 		day = 31;
@@ -32,6 +33,7 @@ char *previousDay(int day, int month, int year)
 		day--;
 	}
 
+	// cong chuoi
 	int count = 0;
 	for (int i = day; i > 0; i /= 10)
 	{
@@ -39,6 +41,18 @@ char *previousDay(int day, int month, int year)
 	}
 	int digit = 0;
 	int index = 0;
+	// print day, month, year from left to right
+	// 12/12/2022
+	// result[0] = 1 + '0'
+	// result[1] = 2 + '0'
+	// result[2] = "/"
+	// result[3] = "1"
+	// result[4] = "2"
+	// result[5] = "/"
+	// result[6] = "2"
+	// result[7] = "0"
+	// result[8] = "2"
+	// result[9] = "2"
 	for (int i = count, n = day; i > 0; i--)
 	{
 		// 5346 / 1000 = 5

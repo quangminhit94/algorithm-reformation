@@ -11,9 +11,10 @@ void runEx()
 {
 	printf("%sFind average of scores\n", TITLE);
 
-	char name[] ="";
+	char name[100];
 	printf("\nPlease enter an string value of student name: ");
-	scanf("%s", name);
+	gets(name);
+	// scanf("%s", name);
 	
 	float math;
 	printf("\nPlease enter an float value of math scores: ");

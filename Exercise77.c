@@ -4,6 +4,13 @@ double sumOfNumber(int n) {
 	if(n <= 1) return 1;
 	return n + sumOfNumber(n - 1);
 }
+int sumOfNumber1(int n) {
+	int sum = 0;
+	for (int i = 1; i <= n; i++) {
+		sum += i;
+	}
+	return sum;
+}
 
 const char TITLE[] = "Find The sum of the members of a finite arithmetic progression is called an arithmetic series \n";
 void runEx()
