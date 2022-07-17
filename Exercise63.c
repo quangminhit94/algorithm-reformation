@@ -3,21 +3,18 @@
 void findLcm(int a, int b)
 {
 	// 45, 27
-	int min = a, max = 1;
-	if(min > b) {
-		min = b;
-	}
-	for (int i = min; i > 0; --i)
+	int maxDivisor = 1;
+	for(int i = 1; i <= a && i <= b; i++)
 	{
-		if (a % i == 0 && b % i == 0) {
-			max = i;
-			break;
+		if(a % i == 0 && b % i == 0)
+		{
+			maxDivisor = i;
 		}
-	};
+	}
 	printf("\n");
-	printf("Max Divisor of %d and %d is: %d\n", a, b, max);
+	printf("Max Divisor of %d and %d is: %d\n", a, b, maxDivisor);
 	int lcm = 0;
-	lcm = a * b / max;
+	lcm = a * b / maxDivisor;
 	printf("Least common multiple of integers %d and %d is: %d\n", a, b, lcm);
 };
 
