@@ -12,41 +12,63 @@ void printArrayInt(int n, int arr[])
 	printf("\n");
 }
 
-int isSquare(int n)
+int isPrime(int n)
 {
-	if (sqrt(n) * sqrt(n) == n)
+	if (n == 1)
+	{
+		return 0;
+	}
+	for (int i = 2; i <= sqrt(n); i++)
+	{
+		if (n % i == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int isFirstDigitOdd(int n)
+{
+	int firstDigit = 0;
+	for (int i = n; i > 0; i /= 10)
+	{
+		firstDigit = i % 10;
+	}
+	if (firstDigit % 2 == 1)
 	{
 		return 1;
 	}
 	return 0;
 }
 
-int *indexOfSquareItems(int n, int arr[])
+int *primeItemsFirstDigitOdd(int n, int arr[])
 {
 	int *list = (int *)malloc(n);
 	int count = 0;
 	for (int i = 0; i < n; i++)
 	{
-		if (isSquare(arr[i]))
+		if (isPrime(arr[i]) && isFirstDigitOdd(arr[i]))
 		{
-			list[count] = i;
+			list[count] = arr[i];
 			count++;
 		}
 	}
+
 	return list;
 }
 
-const char TITLE[] = "Input an array int. Return index of square number\n";
+const char TITLE[] = "Input an array positive int. Return prime items have first digit odd\n";
 void runEx()
 {
-	// Array = [2, 5, 7, 9, 45] -> index 3
-	printf("%sArray = [2, 5, 7, 9, 45] -> index 3\n", TITLE);
+	// Array = [45, 5, 7, 9, 2] -> 5 7
+	printf("%sArray = [45, 5, 7, 9, 2] -> 5 7\n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of array size n: ");
 	scanf("%d", &n);
 
-	// input positive number array
+	// input real number array
 	int arr[n];
 	for (int i = 0; i < n; i++)
 	{
@@ -61,8 +83,8 @@ void runEx()
 
 	printArrayInt(n, arr);
 
-	int *list = indexOfSquareItems(n, arr);
-	printf("\nIndex of square items: ");
+	int *list = primeItemsFirstDigitOdd(n, arr);
+	printf("\nPrime items have first digit odd: ");
 	for (int i = 0; i < n; i++)
 	{
 		if (list[i] != 0)

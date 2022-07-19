@@ -12,57 +12,53 @@ void printArrayInt(int n, int arr[])
 	printf("\n");
 }
 
-int isSquare(int n)
+int isMoreThanItem(int a, int b)
 {
-	if (sqrt(n) * sqrt(n) == n)
+	if (a > b)
 	{
 		return 1;
 	}
 	return 0;
 }
 
-int *indexOfSquareItems(int n, int arr[])
+int *itemsMoreThanAdjacent(int n, int arr[])
 {
 	int *list = (int *)malloc(n);
 	int count = 0;
-	for (int i = 0; i < n; i++)
+	for (int i = 1; i < n - 1; i++)
 	{
-		if (isSquare(arr[i]))
+		if (isMoreThanItem(arr[i], arr[i - 1]) && isMoreThanItem(arr[i], arr[i + 1]))
 		{
-			list[count] = i;
+			list[count] = arr[i];
 			count++;
 		}
 	}
+
 	return list;
 }
 
-const char TITLE[] = "Input an array int. Return index of square number\n";
+const char TITLE[] = "Input an array int. Return items are more than adjacent items\n";
 void runEx()
 {
-	// Array = [2, 5, 7, 9, 45] -> index 3
-	printf("%sArray = [2, 5, 7, 9, 45] -> index 3\n", TITLE);
+	// Array = [45, 5, 7, 9, 2] -> 45 9
+	printf("%sArray = [45, 5, 7, 9, 2] -> 45 9\n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of array size n: ");
 	scanf("%d", &n);
 
-	// input positive number array
+	// input real number array
 	int arr[n];
 	for (int i = 0; i < n; i++)
 	{
 		printf("\nPlease enter an integer value of item: ");
 		scanf("%d", &arr[i]);
-		if(arr[i] < 0)
-		{
-			printf("\nIndex %d, Please enter a positive number\n", i);
-			i--;
-		}
 	}
 
 	printArrayInt(n, arr);
 
-	int *list = indexOfSquareItems(n, arr);
-	printf("\nIndex of square items: ");
+	int *list = itemsMoreThanAdjacent(n, arr);
+	printf("\nitems are more than adjacent items: ");
 	for (int i = 0; i < n; i++)
 	{
 		if (list[i] != 0)

@@ -12,35 +12,41 @@ void printArrayInt(int n, int arr[])
 	printf("\n");
 }
 
-int isSquare(int n)
+int isAllDigitOdd(int n)
 {
-	if (sqrt(n) * sqrt(n) == n)
+	int digit = 0;
+	for (int i = n; i > 0; i /= 10)
 	{
-		return 1;
+		digit = i % 10;
+		if(digit % 2 == 0)
+		{
+			return 0;
+		}
 	}
-	return 0;
+	return 1;
 }
 
-int *indexOfSquareItems(int n, int arr[])
+int *itemsAllDigitOdd(int n, int arr[])
 {
 	int *list = (int *)malloc(n);
 	int count = 0;
 	for (int i = 0; i < n; i++)
 	{
-		if (isSquare(arr[i]))
+		if (isAllDigitOdd(arr[i]))
 		{
-			list[count] = i;
+			list[count] = arr[i];
 			count++;
 		}
 	}
+
 	return list;
 }
 
-const char TITLE[] = "Input an array int. Return index of square number\n";
+const char TITLE[] = "Input an array positive int. Return items have all digit odd\n";
 void runEx()
 {
-	// Array = [2, 5, 7, 9, 45] -> index 3
-	printf("%sArray = [2, 5, 7, 9, 45] -> index 3\n", TITLE);
+	// Array = [45, 5, 7, 9, 2] -> 5 7 9
+	printf("%sArray = [45, 5, 7, 9, 2] -> 5 7 9\n", TITLE);
 
 	unsigned int n;
 	printf("\nPlease enter an integer value of array size n: ");
@@ -61,8 +67,8 @@ void runEx()
 
 	printArrayInt(n, arr);
 
-	int *list = indexOfSquareItems(n, arr);
-	printf("\nIndex of square items: ");
+	int *list = itemsAllDigitOdd(n, arr);
+	printf("\nItems have all digit odd: ");
 	for (int i = 0; i < n; i++)
 	{
 		if (list[i] != 0)

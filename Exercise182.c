@@ -29,7 +29,7 @@ int *itemHasLeastAdjacentOppositeSign(int n, int arr[])
 {
 	int *list = (int *)malloc(n);
 	int count = 0;
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i < n - 1; i++)
 	{
 		if (isOppositeSign(arr[i], arr[i + 1]) || isOppositeSign(arr[i], arr[i - 1]))
 		{

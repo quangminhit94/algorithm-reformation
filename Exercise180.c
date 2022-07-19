@@ -16,7 +16,7 @@ int *listItemLessThanNextItemAndMoreThanPreItem(int n, int *arr) {
 	// return a list of item is less than abs of next item and more than previous item
 	int *list = (int *)malloc(n);
 	int count = 0;
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i < n - 1; i++)
 	{
 		if (arr[i] < abs(arr[i + 1]) && arr[i] > arr[i - 1])
 		{
