@@ -12,10 +12,7 @@ void printArrayInt(int n, int arr[])
 	printf("\n");
 }
 
-int *indexOfMaxItems(int n, int arr[])
-{
-	int *list = (int *)malloc(n);
-	int count = 0;
+int maxItemValue(int n, int *arr) {
 	int max = arr[0];
 	for (int i = 1; i < n; i++)
 	{
@@ -24,6 +21,27 @@ int *indexOfMaxItems(int n, int arr[])
 			max = arr[i];
 		}
 	}
+	return max;
+}
+
+int sizeOfArrayMatchCondition(int n, int arr[]) {
+	int max = maxItemValue(n, arr);
+	int size = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] == max)
+		{
+			size++;
+		}
+	}
+	return size;
+}
+
+int *indexOfMaxItems(int n, int arr[], int size)
+{
+	int max = maxItemValue(n, arr);
+	int *list = (int *)malloc(size);
+	int count = 0;
 	for (int i = 0; i < n; i++)
 	{
 		if (arr[i] == max)
@@ -49,20 +67,18 @@ void runEx()
 	int arr[n];
 	for (int i = 0; i < n; i++)
 	{
-		printf("\nPlease enter an integer value of item: ");
+		printf("\nPlease enter an integer value of item arr[%d]: ", i);
 		scanf("%d", &arr[i]);
 	}
 
 	printArrayInt(n, arr);
 
-	int *list = indexOfMaxItems(n, arr);
+	int size = sizeOfArrayMatchCondition(n, arr);
+	int *list = indexOfMaxItems(n, arr, size);
 	printf("\nIndex of max items: ");
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < size; i++)
 	{
-		if (list[i] != 0)
-		{
-			printf("%d ", list[i]);
-		}
+		printf("%d ", list[i]);
 	}
 	printf("\n");
 }
